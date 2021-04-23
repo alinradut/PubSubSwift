@@ -1,4 +1,4 @@
-# PubSub.swift
+# PubSubSwift
 
 [![CI Status](https://img.shields.io/travis/alinradut/PubSub.svg?style=flat)](https://travis-ci.org/alinradut/PubSub)
 [![Version](https://img.shields.io/cocoapods/v/PubSub.svg?style=flat)](https://cocoapods.org/pods/PubSub)
@@ -103,7 +103,7 @@ PubSub is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'PubSub.swift'
+pod 'PubSubSwift'
 ```
 
 ## Author

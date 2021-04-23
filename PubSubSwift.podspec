@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'PubSub.swift'
+  s.name             = 'PubSubSwift'
   s.version          = '0.1.0'
   s.summary          = 'A type-safe implementation Swift of PubSub/event hub that can be used as a replacement for the NotificationCenter'
 
@@ -21,12 +21,12 @@ Pod::Spec.new do |s|
 A type-safe implementation Swift of PubSub/event hub that can be used as a replacement for the NotificationCenter.
                        DESC
 
-  s.homepage         = 'https://github.com/alinradut/PubSub.swift'
+  s.homepage         = 'https://github.com/alinradut/PubSubSwift'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Alin Radut' => '...' }
   # s.source           = { :git => 'https://github.com/alinradut/PubSub.swift.git', :tag => s.version.to_s }
-  s.source           = { :git => 'https://github.com/alinradut/PubSub.swift.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/alinradut/PubSubSwift.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
