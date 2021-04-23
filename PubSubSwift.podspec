@@ -25,7 +25,7 @@ A type-safe implementation Swift of PubSub/event hub that can be used as a repla
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Alin Radut' => '...' }
-  # s.source           = { :git => 'https://github.com/alinradut/PubSub.swift.git', :tag => s.version.to_s }
+  # s.source           = { :git => 'https://github.com/alinradut/PubSubSwift.git', :tag => s.version.to_s }
   s.source           = { :git => 'https://github.com/alinradut/PubSubSwift.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
