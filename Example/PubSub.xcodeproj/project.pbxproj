@@ -290,11 +290,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PubSub_Example/Pods-PubSub_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/PubSub/PubSub.framework",
+				"${BUILT_PRODUCTS_DIR}/PubSubSwift/PubSubSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PubSub.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PubSubSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

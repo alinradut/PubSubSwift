@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PubSub
+import PubSubSwift
 
 enum Reachability: String, EventType {
     case notReachable

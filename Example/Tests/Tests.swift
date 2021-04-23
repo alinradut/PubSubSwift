@@ -2,7 +2,7 @@
 
 import Quick
 import Nimble
-import PubSub
+import PubSubSwift
 
 enum LoginEvent: EventType {
     case Success(Int)
