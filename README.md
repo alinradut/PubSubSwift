@@ -1,9 +1,9 @@
 # PubSubSwift
 
-[![CI Status](https://img.shields.io/travis/alinradut/PubSub.svg?style=flat)](https://travis-ci.org/alinradut/PubSub)
-[![Version](https://img.shields.io/cocoapods/v/PubSub.svg?style=flat)](https://cocoapods.org/pods/PubSub)
-[![License](https://img.shields.io/cocoapods/l/PubSub.svg?style=flat)](https://cocoapods.org/pods/PubSub)
-[![Platform](https://img.shields.io/cocoapods/p/PubSub.svg?style=flat)](https://cocoapods.org/pods/PubSub)
+[![CI Status](https://img.shields.io/travis/alinradut/PubSubSwift.svg?style=flat)](https://travis-ci.org/alinradut/PubSubSwift)
+[![Version](https://img.shields.io/cocoapods/v/PubSubSwift.svg?style=flat)](https://cocoapods.org/pods/PubSubSwift)
+[![License](https://img.shields.io/cocoapods/l/PubSubSwift.svg?style=flat)](https://cocoapods.org/pods/PubSubSwift)
+[![Platform](https://img.shields.io/cocoapods/p/PubSubSwift.svg?style=flat)](https://cocoapods.org/pods/PubSubSwift)
 
 A type-safe implementation Swift of PubSub/event hub that can be used as a replacement for the NotificationCenter.
 
