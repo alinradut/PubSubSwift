@@ -18,17 +18,19 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+A type-safe implementation Swift of PubSub/event hub that can be used as a replacement for the NotificationCenter.
                        DESC
 
-  s.homepage         = 'https://github.com/alinradut/pubsub.swift'
+  s.homepage         = 'https://github.com/alinradut/PubSub.swift'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Alin Radut' => '...' }
-  s.source           = { :git => 'https://github.com/alinradut/pubsub.swift.git', :tag => s.version.to_s }
+  # s.source           = { :git => 'https://github.com/alinradut/PubSub.swift.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/alinradut/PubSub.swift.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
+  s.swift_versions        = '4.0'
 
   s.source_files = 'PubSub/Classes/**/*'
   
