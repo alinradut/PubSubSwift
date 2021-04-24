@@ -156,7 +156,7 @@ class TableOfContentsSpec: QuickSpec {
                 
                 it("is observed once for each receipt observation") {
                     
-                    let receipt2 = self.eventHub.subscribe { (event: LoginEvent) in
+                    var receipt2: Receipt? = self.eventHub.subscribe { (event: LoginEvent) in
                         switch event {
                         case .Success(let i):
                             result = result + i
@@ -164,7 +164,7 @@ class TableOfContentsSpec: QuickSpec {
                             break
                         }
                     }
-                    let receipt3 = self.eventHub.subscribe { (event: LoginEvent) in
+                    var receipt3: Receipt? = self.eventHub.subscribe { (event: LoginEvent) in
                         switch event {
                         case .Success(let i):
                             result = result + i
@@ -175,6 +175,9 @@ class TableOfContentsSpec: QuickSpec {
                     
                     self.eventHub.post(LoginEvent.Success(1))
                     expect(result) == 3
+                    
+                    receipt2 = nil
+                    receipt3 = nil
                 }
             }
 
@@ -263,7 +266,7 @@ class TableOfContentsSpec: QuickSpec {
                         .default
                     ]
 
-                    DispatchQueue.concurrentPerform(iterations: 50_000) { i in
+                    DispatchQueue.concurrentPerform(iterations: 10_000) { i in
                         let qos: DispatchQoS.QoSClass = qosClasses[Int.random(in: 0..<qosClasses.count)]
                         if Int.random(in: 0..<100) == 0 {
                             DispatchQueue.main.async {
@@ -278,7 +281,7 @@ class TableOfContentsSpec: QuickSpec {
                         }
                     }
 
-                    expect(result).toEventually(equal(50_000), timeout: 100, pollInterval: 0.1)
+                    expect(result).toEventually(equal(10_000), timeout: 100, pollInterval: 0.1)
                 }
             }
 
