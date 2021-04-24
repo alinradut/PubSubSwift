@@ -10,6 +10,6 @@ podfile: Example/Podfile
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/PubSub.xcworkspace -scheme PubSub_Example -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0' ONLY_ACTIVE_ARCH=YES | xcpretty
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/PubSub.xcworkspace -scheme PubSub_Example -destination 'platform=iOS Simulator,name=iPhone 6,OS=11.01' ONLY_ACTIVE_ARCH=YES | xcpretty
 - pod lib lint
 
