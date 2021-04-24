@@ -55,6 +55,8 @@ struct Subscription<T>: EventSubcription {
         guard let event = event as? T else {
             return
         }
+        
+        let block = self.block
 
         if let queue = queue {
 
