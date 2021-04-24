@@ -147,11 +147,34 @@ class TableOfContentsSpec: QuickSpec {
                     self.eventHub.post(LoginEvent.Success(1))
                     expect(result) == 1
                 }
-
+                
                 it("is not observed if receipt deinits") {
                     receipt = nil
                     self.eventHub.post(LoginEvent.Success(1))
                     expect(result) == 0
+                }
+                
+                it("is observed once for each receipt observation") {
+                    
+                    let receipt2 = self.eventHub.subscribe { (event: LoginEvent) in
+                        switch event {
+                        case .Success(let i):
+                            result = result + i
+                        case .Failure:
+                            break
+                        }
+                    }
+                    let receipt3 = self.eventHub.subscribe { (event: LoginEvent) in
+                        switch event {
+                        case .Success(let i):
+                            result = result + i
+                        case .Failure:
+                            break
+                        }
+                    }
+                    
+                    self.eventHub.post(LoginEvent.Success(1))
+                    expect(result) == 3
                 }
             }
 
