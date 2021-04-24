@@ -30,7 +30,7 @@ A type-safe implementation Swift of PubSub/event hub that can be used as a repla
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
-  s.swift_versions        = '5.0'
+  s.swift_versions        = '5.1'
 
   s.source_files = 'PubSub/Classes/**/*'
   
