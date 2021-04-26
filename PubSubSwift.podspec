@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PubSubSwift'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0'
   s.summary          = 'A type-safe implementation Swift of PubSub/event hub that can be used as a replacement for the NotificationCenter'
 
 # This description is used to generate tags and improve search results.
