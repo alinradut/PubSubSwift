@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'PubSubSwift'
   s.version          = '0.3.0'
-  s.summary          = 'A type-safe implementation Swift of PubSub/event hub that can be used as a replacement for the NotificationCenter'
+  s.summary          = 'A type-safe implementation Swift of PubSub/event hub/event bus that can be used as a replacement for the NotificationCenter'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,9 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-A type-safe implementation Swift of PubSub/event hub that can be used as a replacement for the NotificationCenter.
+A type-safe implementation Swift of PubSub/event hub/event bus that can be used as a replacement for the NotificationCenter.
+
+Allows subscription based on receipts and observers.
                        DESC
 
   s.homepage         = 'https://github.com/alinradut/PubSubSwift'
