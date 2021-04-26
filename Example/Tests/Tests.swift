@@ -46,20 +46,20 @@ class TableOfContentsSpec: QuickSpec {
                 }
 
                 it("is observed") {
-                    self.eventHub.post(LoginEvent.Success(1))
+                    self.eventHub.publish(LoginEvent.Success(1))
                     expect(result) == 1
                 }
 
                 it("is observed multiple times") {
-                    self.eventHub.post(LoginEvent.Success(1))
-                    self.eventHub.post(LoginEvent.Success(2))
-                    self.eventHub.post(LoginEvent.Success(3))
+                    self.eventHub.publish(LoginEvent.Success(1))
+                    self.eventHub.publish(LoginEvent.Success(2))
+                    self.eventHub.publish(LoginEvent.Success(3))
                     expect(result) == 6
                 }
 
                 it("isn't observed if observer is deinited") {
                     observer = nil
-                    self.eventHub.post(LoginEvent.Success(1))
+                    self.eventHub.publish(LoginEvent.Success(1))
                     expect(result) == 0
                 }
 
@@ -67,12 +67,12 @@ class TableOfContentsSpec: QuickSpec {
                     expect(self.eventHub.isSubscribed(observer!)) == true
                     self.eventHub.unsubscribe(observer!)
                     expect(self.eventHub.isSubscribed(observer!)) == false
-                    self.eventHub.post(LoginEvent.Success(1))
+                    self.eventHub.publish(LoginEvent.Success(1))
                     expect(result) == 0
                 }
 
                 it("isn't observed if another event is posted") {
-                    self.eventHub.post(RegistrationEvent())
+                    self.eventHub.publish(RegistrationEvent())
                     expect(result) == 0
                 }
 
@@ -111,7 +111,7 @@ class TableOfContentsSpec: QuickSpec {
                         }
                     }
 
-                    self.eventHub.post(LoginEvent.Success(1))
+                    self.eventHub.publish(LoginEvent.Success(1))
                     expect(result) == 10
                 }
 
@@ -120,7 +120,7 @@ class TableOfContentsSpec: QuickSpec {
                         result = result + 10
                     }
                     self.eventHub.unsubscribe(observer!, eventType: LoginEvent.self)
-                    self.eventHub.post(RegistrationEvent())
+                    self.eventHub.publish(RegistrationEvent())
                     expect(result) == 10
                 }
             }
@@ -144,13 +144,13 @@ class TableOfContentsSpec: QuickSpec {
                 }
 
                 it("is observed") {
-                    self.eventHub.post(LoginEvent.Success(1))
+                    self.eventHub.publish(LoginEvent.Success(1))
                     expect(result) == 1
                 }
                 
                 it("is not observed if receipt deinits") {
                     receipt = nil
-                    self.eventHub.post(LoginEvent.Success(1))
+                    self.eventHub.publish(LoginEvent.Success(1))
                     expect(result) == 0
                 }
                 
@@ -173,7 +173,7 @@ class TableOfContentsSpec: QuickSpec {
                         }
                     }
                     
-                    self.eventHub.post(LoginEvent.Success(1))
+                    self.eventHub.publish(LoginEvent.Success(1))
                     expect(result) == 3
                     
                     receipt2 = nil
@@ -204,7 +204,7 @@ class TableOfContentsSpec: QuickSpec {
                 }
 
                 it("is observed") {
-                    self.eventHub.post(LoginEvent.Success(1))
+                    self.eventHub.publish(LoginEvent.Success(1))
                     expect(result).toEventually(equal(1))
                 }
             }
@@ -232,7 +232,7 @@ class TableOfContentsSpec: QuickSpec {
                 }
 
                 it("is observed") {
-                    self.eventHub.post(LoginEvent.Success(1))
+                    self.eventHub.publish(LoginEvent.Success(1))
                     expect(result).toEventually(equal(1))
                 }
             }
@@ -271,12 +271,12 @@ class TableOfContentsSpec: QuickSpec {
                         if Int.random(in: 0..<100) == 0 {
                             DispatchQueue.main.async {
                                 // print("\(i) - main")
-                                self.eventHub.post(LoginEvent.Success(1))
+                                self.eventHub.publish(LoginEvent.Success(1))
                             }
                         } else {
                             DispatchQueue.global(qos: qos).async {
                                 // print("\(i) - \(qos)")
-                                self.eventHub.post(LoginEvent.Success(1))
+                                self.eventHub.publish(LoginEvent.Success(1))
                             }
                         }
                     }
@@ -315,7 +315,7 @@ class TableOfContentsSpec: QuickSpec {
                         }
                     }
 
-                    self.eventHub.post(LoginEvent.Success(1))
+                    self.eventHub.publish(LoginEvent.Success(1))
                     expect(result) == 10
                 }
             }
@@ -355,7 +355,7 @@ class TableOfContentsSpec: QuickSpec {
 
                     expect(self.eventHub.isSubscribed(observer!)) == true
 
-                    self.eventHub.post(LoginEvent.Success(1))
+                    self.eventHub.publish(LoginEvent.Success(1))
 
                     expect(result) == 1
                     expect(otherResult) == 10

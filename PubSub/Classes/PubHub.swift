@@ -93,7 +93,7 @@ public class PubSub {
 
     /// Post an event.
     /// - Parameter event: Event
-    public func post<T: EventType>(_ event: T) {
+    public func publish<T: EventType>(_ event: T) {
         observations.forEach {
             guard $0.isValid else {
                 return

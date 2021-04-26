@@ -38,19 +38,20 @@ class ViewController: UIViewController {
 
         print("Posting notReachable")
         // Do any additional setup after loading the view, typically from a nib.
-        PubSub.shared.post(Reachability.notReachable)
+        PubSub.shared.publish(Reachability.notReachable)
 
         print("Removing foo")
         foo = nil
 
         print("Posting reachableOnWifi")
-        PubSub.shared.post(Reachability.reachableOnWifi)
+        PubSub.shared.publish(Reachability.reachableOnWifi)
 
         print("Removing bar")
         PubSub.shared.unsubscribe(self)
 
+        // will not be received by anyone
         print("Posting reachableOnCellular")
-        PubSub.shared.post(Reachability.reachableOnCellular)
+        PubSub.shared.publish(Reachability.reachableOnCellular)
     }
 
     override func didReceiveMemoryWarning() {
