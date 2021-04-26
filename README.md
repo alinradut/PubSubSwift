@@ -33,7 +33,7 @@ struct ActivationCode: EventType {
 And can be posted as such:
 
 ```
-pubSub.post(ActivationCode(code: "123456"))
+pubSub.publish(ActivationCode(code: "123456"))
 ```
 
 ### Subscribing to an event with an observer
@@ -92,6 +92,23 @@ pubSub.subscribe(queue: .main) { (event: Reachability) in
 
 If the receiver is subscribed on the main queue and the message is posted from the main queue, the subscriber will receive it synchronously, otherwise it will be dispatched asynchronously. If no queue is specified, the queue where the message is posted from will be used to deliver it synchronously.
 
+### Memory management
+
+Subscribers will never be retained, but you must be careful not to cause retain cycles by strongly referencing `self` from a subscription block of a PubSub instance owned by the subscriber:
+
+```
+// Warning! Do not do this:
+class Foo {
+    var pubSub: PubSub = .shared
+    
+    func bar() {
+        pubSub.subscribe(self) { (event: Reachability) in
+            // this would cause a memory leak
+            self.updateReachability(event)  
+        }
+    }
+}
+```
 
 ## Requirements
 
