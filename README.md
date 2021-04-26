@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/PubSubSwift.svg?style=flat)](https://cocoapods.org/pods/PubSubSwift)
 [![Platform](https://img.shields.io/cocoapods/p/PubSubSwift.svg?style=flat)](https://cocoapods.org/pods/PubSubSwift)
 
-A type-safe implementation Swift of PubSub/event hub that can be used as a replacement for the NotificationCenter.
+A type-safe implementation Swift of PubSub/event hub/event bus that can be used as a replacement for the NotificationCenter.
 
 ## Usage
 
